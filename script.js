@@ -3,6 +3,9 @@
 // Variabile con data finale
 let finalDate = new Date('09/06/2023 9:30:00');
 //console.log(finalDate);
+document.getElementById('description').innerHTML = ('Tempo mancante a ' + finalDate);
+// Variabile associata al div
+let timeRemainingDiv = document.getElementById('timeRemaining');
 
 setInterval(function () {
 
@@ -19,11 +22,13 @@ setInterval(function () {
     let seconds = Math.floor((timeRemaining % (1000 * 60)) / (1000));
     
     // Creo stringa da stampare
-    let timeRemainingString = (days + 'd' + hours + 'h' + minutes + 'm' + seconds + 's');
+    let timeRemainingString = (days + 'd ' + hours + 'h ' + minutes + 'm ' + seconds + 's');
     
     //console.log(now);
-    console.log(timeRemainingString);
+    //console.log(timeRemainingString);
 
+    // Stampa in pagina
+    timeRemainingDiv.innerHTML = timeRemainingString;
 
 }, 1000);
 
